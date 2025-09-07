@@ -29,7 +29,7 @@ jobs:
       run: |
         echo "ARM_CLIENT_ID: ${ARM_CLIENT_ID:0:5}***"
         echo "ARM_TENANT_ID: ${ARM_TENANT_ID:0:5}***"
-        echo "ARM_SUBSCRIPTION_ID: ${ARM_SUBSCRIPTION_ID:0:5}***"
+        
 
     - name: 'Terraform Format'
       uses: hashicorp/terraform-github-actions@master
