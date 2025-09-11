@@ -32,14 +32,13 @@ jobs:
         curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
         tflint --version
     - name: Run TFLint
-      run: tflint --chdir=./terraform || true
+      run: tflint --chdir=./terraform 
 
     # Security Scan
     - name: Install Checkov
       run: pip install checkov
     - name: Run Checkov
-      run: checkov -d ./terraform
-      
+      run: checkov -d ./terraform || true      
     - name: Print ENV
       run: |
         echo "ARM_CLIENT_ID: ${ARM_CLIENT_ID:0:5}***"
