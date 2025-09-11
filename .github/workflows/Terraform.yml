@@ -53,13 +53,13 @@ jobs:
         tf_actions_subcommand: 'validate'
         tf_actions_working_dir: "./terraform"
 
-    - name: Set up Azure authentication
-      run: |
-        echo "ARM_CLIENT_ID=${{ secrets.AZURE_AD_CLIENT_ID }}" >> $GITHUB_ENV
-        echo "ARM_CLIENT_SECRET=${{ secrets.AZURE_AD_CLIENT_SECRET }}" >> $GITHUB_ENV
-        echo "ARM_TENANT_ID=${{ secrets.AZURE_AD_TENANT_ID }}" >> $GITHUB_ENV
-        echo "ARM_SUBSCRIPTION_ID=${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
-        echo "ARM_CLIENT_OBJECT_ID=${{ secrets.AZURE_AD_OBJECT_ID }}" >> $GITHUB_ENV
+    # - name: Set up Azure authentication
+    #   run: |
+    #     echo "ARM_CLIENT_ID=${{ secrets.AZURE_AD_CLIENT_ID }}" >> $GITHUB_ENV
+    #     echo "ARM_CLIENT_SECRET=${{ secrets.AZURE_AD_CLIENT_SECRET }}" >> $GITHUB_ENV
+    #     echo "ARM_TENANT_ID=${{ secrets.AZURE_AD_TENANT_ID }}" >> $GITHUB_ENV
+    #     echo "ARM_SUBSCRIPTION_ID=${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
+    #     echo "ARM_CLIENT_OBJECT_ID=${{ secrets.AZURE_AD_OBJECT_ID }}" >> $GITHUB_ENV
 
       
     - name: 'Terraform Plan'
