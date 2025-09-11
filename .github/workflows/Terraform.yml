@@ -25,6 +25,20 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+
+    # Lint Terraform code
+    - name: Setup TFLint
+      run: |
+        curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+        tflint --version
+    - name: Run TFLint
+      run: tflint --chdir=./terraform
+
+    # Security Scan
+    - name: Install Checkov
+      run: pip install checkov
+    - name: Run Checkov
+      run: checkov -d ./terraform
       
     - name: Print ENV
       run: |
