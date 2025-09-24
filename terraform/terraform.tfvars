@@ -1,6 +1,6 @@
-rgname   = "Omgithub-action"
-location = "East US"
-sname    = "demogithubactions"
+rgname                  = "Omgithub-action"
+location                = "East US"
+sname                   = "demogithubactions"
 vnet_name               = "dev-vnet"
 vnet_address_space      = ["10.0.0.0/16"]
 subnet_name             = "dev-subnet"
