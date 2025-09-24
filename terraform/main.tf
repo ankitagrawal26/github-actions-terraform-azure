@@ -7,8 +7,8 @@ terraform {
   }
 }
 module "RG" {
-  source = "./modules/RG" #A
-  rgname = var.rgname     #B
+  source = "./modules/RG"  #A
+  rgname = var.rgname  #B
   location = var.location
 }
 module "SA" {
