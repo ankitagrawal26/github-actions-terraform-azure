@@ -41,7 +41,7 @@ variable "daily_quota_gb" {
 
 variable "solutions" {
   description = "Map of Log Analytics solutions to install"
-  type        = map(object({
+  type = map(object({
     publisher = string
     product   = string
   }))
@@ -59,11 +59,11 @@ variable "solutions" {
 
 variable "diagnostic_settings" {
   description = "Map of diagnostic settings"
-  type        = map(object({
+  type = map(object({
     target_resource_id = string
     enabled_logs = list(object({
-      category        = string
-      category_group  = string
+      category       = string
+      category_group = string
       retention_policy = object({
         enabled = bool
         days    = number
@@ -83,7 +83,7 @@ variable "diagnostic_settings" {
 
 variable "saved_searches" {
   description = "Map of saved searches"
-  type        = map(object({
+  type = map(object({
     category     = string
     display_name = string
     query        = string

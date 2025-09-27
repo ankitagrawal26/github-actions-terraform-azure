@@ -40,7 +40,7 @@ resource "azurerm_monitor_diagnostic_setting" "diagnostic_settings" {
   dynamic "enabled_log" {
     for_each = each.value.enabled_logs
     content {
-      category = enabled_log.value.category
+      category       = enabled_log.value.category
       category_group = enabled_log.value.category_group
 
       retention_policy {

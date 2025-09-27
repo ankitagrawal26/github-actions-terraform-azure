@@ -33,9 +33,9 @@ output "vm" {
 # Key Vault Outputs
 output "key_vault" {
   value = {
-    id       = module.KeyVault.key_vault_id
-    name     = module.KeyVault.key_vault_name
-    uri      = module.KeyVault.key_vault_uri
+    id        = module.KeyVault.key_vault_id
+    name      = module.KeyVault.key_vault_name
+    uri       = module.KeyVault.key_vault_uri
     tenant_id = module.KeyVault.key_vault_tenant_id
   }
 }
@@ -43,10 +43,10 @@ output "key_vault" {
 # App Service Outputs
 output "app_service" {
   value = {
-    id                = module.AppService.app_service_id
-    name              = module.AppService.app_service_name
-    default_hostname  = module.AppService.app_service_default_site_hostname
-    outbound_ips      = module.AppService.app_service_outbound_ip_addresses
+    id               = module.AppService.app_service_id
+    name             = module.AppService.app_service_name
+    default_hostname = module.AppService.app_service_default_site_hostname
+    outbound_ips     = module.AppService.app_service_outbound_ip_addresses
   }
 }
 
@@ -73,7 +73,7 @@ output "load_balancer" {
 # Log Analytics Outputs
 output "log_analytics" {
   value = {
-    workspace_id = module.LogAnalytics.workspace_id
+    workspace_id   = module.LogAnalytics.workspace_id
     workspace_name = module.LogAnalytics.workspace_name
     portal_url     = module.LogAnalytics.workspace_portal_url
   }

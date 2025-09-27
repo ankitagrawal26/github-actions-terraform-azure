@@ -22,18 +22,18 @@ resource "azurerm_app_service" "app" {
   app_service_plan_id = azurerm_app_service_plan.asp.id
 
   site_config {
-    linux_fx_version = var.linux_fx_version
-    windows_fx_version = var.windows_fx_version
-    dotnet_framework_version = var.dotnet_framework_version
-    php_version = var.php_version
-    python_version = var.python_version
-    java_version = var.java_version
-    java_container = var.java_container
-    java_container_version = var.java_container_version
-    always_on = var.always_on
-    ftps_state = var.ftps_state
-    http2_enabled = var.http2_enabled
-    min_tls_version = var.min_tls_version
+    linux_fx_version          = var.linux_fx_version
+    windows_fx_version        = var.windows_fx_version
+    dotnet_framework_version  = var.dotnet_framework_version
+    php_version               = var.php_version
+    python_version            = var.python_version
+    java_version              = var.java_version
+    java_container            = var.java_container
+    java_container_version    = var.java_container_version
+    always_on                 = var.always_on
+    ftps_state                = var.ftps_state
+    http2_enabled             = var.http2_enabled
+    min_tls_version           = var.min_tls_version
     use_32_bit_worker_process = var.use_32_bit_worker_process
   }
 
@@ -46,7 +46,7 @@ resource "azurerm_app_service" "app" {
   }
 
   identity {
-    type = var.identity_type
+    type         = var.identity_type
     identity_ids = var.identity_ids
   }
 

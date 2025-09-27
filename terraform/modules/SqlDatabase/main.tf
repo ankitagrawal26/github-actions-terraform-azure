@@ -83,9 +83,9 @@ resource "azurerm_mssql_server_security_alert_policy" "security_policy" {
   count = var.enable_vulnerability_assessment ? 1 : 0
 
   resource_group_name        = var.rgname
-  server_name               = azurerm_mssql_server.sql_server.name
-  state                     = "Enabled"
-  storage_endpoint          = var.va_storage_endpoint
+  server_name                = azurerm_mssql_server.sql_server.name
+  state                      = "Enabled"
+  storage_endpoint           = var.va_storage_endpoint
   storage_account_access_key = var.va_storage_account_access_key
 }
 

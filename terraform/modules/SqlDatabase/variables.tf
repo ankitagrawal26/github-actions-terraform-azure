@@ -64,7 +64,7 @@ variable "azuread_admin_tenant_id" {
 
 variable "firewall_rules" {
   description = "Map of firewall rules"
-  type        = map(object({
+  type = map(object({
     start_ip = string
     end_ip   = string
   }))
@@ -78,44 +78,44 @@ variable "firewall_rules" {
 
 variable "databases" {
   description = "Map of databases to create"
-  type        = map(object({
-    collation                       = string
-    license_type                    = string
-    max_size_gb                     = number
-    sku_name                        = string
-    zone_redundant                  = bool
-    short_term_retention_days       = number
-    long_term_weekly_retention      = string
-    long_term_monthly_retention     = string
-    long_term_yearly_retention      = string
-    long_term_week_of_year          = number
-    threat_detection_enabled        = bool
-    threat_detection_disabled_alerts = list(string)
+  type = map(object({
+    collation                             = string
+    license_type                          = string
+    max_size_gb                           = number
+    sku_name                              = string
+    zone_redundant                        = bool
+    short_term_retention_days             = number
+    long_term_weekly_retention            = string
+    long_term_monthly_retention           = string
+    long_term_yearly_retention            = string
+    long_term_week_of_year                = number
+    threat_detection_enabled              = bool
+    threat_detection_disabled_alerts      = list(string)
     threat_detection_email_account_admins = bool
-    threat_detection_email_addresses = list(string)
-    threat_detection_retention_days = number
-    threat_detection_storage_access_key = string
-    threat_detection_storage_endpoint = string
+    threat_detection_email_addresses      = list(string)
+    threat_detection_retention_days       = number
+    threat_detection_storage_access_key   = string
+    threat_detection_storage_endpoint     = string
   }))
   default = {
     "main-db" = {
-      collation                       = "SQL_Latin1_General_CP1_CI_AS"
-      license_type                    = "LicenseIncluded"
-      max_size_gb                     = 2
-      sku_name                        = "Basic"
-      zone_redundant                  = false
-      short_term_retention_days       = 7
-      long_term_weekly_retention      = "PT0S"
-      long_term_monthly_retention     = "PT0S"
-      long_term_yearly_retention      = "PT0S"
-      long_term_week_of_year          = 1
-      threat_detection_enabled        = false
-      threat_detection_disabled_alerts = []
+      collation                             = "SQL_Latin1_General_CP1_CI_AS"
+      license_type                          = "LicenseIncluded"
+      max_size_gb                           = 2
+      sku_name                              = "Basic"
+      zone_redundant                        = false
+      short_term_retention_days             = 7
+      long_term_weekly_retention            = "PT0S"
+      long_term_monthly_retention           = "PT0S"
+      long_term_yearly_retention            = "PT0S"
+      long_term_week_of_year                = 1
+      threat_detection_enabled              = false
+      threat_detection_disabled_alerts      = []
       threat_detection_email_account_admins = false
-      threat_detection_email_addresses = []
-      threat_detection_retention_days = 0
-      threat_detection_storage_access_key = ""
-      threat_detection_storage_endpoint = ""
+      threat_detection_email_addresses      = []
+      threat_detection_retention_days       = 0
+      threat_detection_storage_access_key   = ""
+      threat_detection_storage_endpoint     = ""
     }
   }
 }

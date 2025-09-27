@@ -22,7 +22,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   location            = var.location
   size                = var.vm_size
   admin_username      = var.admin_username
-  
+
   disable_password_authentication = var.disable_password_auth
 
   network_interface_ids = [

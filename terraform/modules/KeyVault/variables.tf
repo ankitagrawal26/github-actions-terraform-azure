@@ -115,7 +115,7 @@ variable "secrets" {
 
 variable "keys" {
   description = "Map of keys to create in Key Vault"
-  type        = map(object({
+  type = map(object({
     key_type = string
     key_size = number
     key_opts = list(string)

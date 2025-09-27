@@ -19,11 +19,11 @@ resource "azurerm_lb" "lb" {
   sku                 = var.lb_sku
 
   frontend_ip_configuration {
-    name                 = var.frontend_ip_configuration_name
-    public_ip_address_id = var.load_balancer_type == "public" ? azurerm_public_ip.lb_public_ip[0].id : null
-    subnet_id            = var.load_balancer_type == "private" ? var.subnet_id : null
+    name                          = var.frontend_ip_configuration_name
+    public_ip_address_id          = var.load_balancer_type == "public" ? azurerm_public_ip.lb_public_ip[0].id : null
+    subnet_id                     = var.load_balancer_type == "private" ? var.subnet_id : null
     private_ip_address_allocation = var.load_balancer_type == "private" ? var.private_ip_allocation : null
-    private_ip_address   = var.load_balancer_type == "private" ? var.private_ip_address : null
+    private_ip_address            = var.load_balancer_type == "private" ? var.private_ip_address : null
   }
 
   tags = {

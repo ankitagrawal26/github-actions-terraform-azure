@@ -89,7 +89,7 @@ variable "private_ip_address" {
 
 variable "backend_addresses" {
   description = "Map of backend addresses"
-  type        = map(object({
+  type = map(object({
     virtual_network_id = string
     ip_address         = string
   }))
@@ -98,8 +98,8 @@ variable "backend_addresses" {
 
 variable "nat_rules" {
   description = "Map of NAT rules"
-  type        = map(object({
-    protocol   = string
+  type = map(object({
+    protocol      = string
     frontend_port = number
     backend_port  = number
   }))
@@ -108,7 +108,7 @@ variable "nat_rules" {
 
 variable "health_probes" {
   description = "Map of health probes"
-  type        = map(object({
+  type = map(object({
     protocol            = string
     port                = number
     interval_in_seconds = number
@@ -130,7 +130,7 @@ variable "health_probes" {
 
 variable "lb_rules" {
   description = "Map of load balancer rules"
-  type        = map(object({
+  type = map(object({
     protocol                = string
     frontend_port           = number
     backend_port            = number
