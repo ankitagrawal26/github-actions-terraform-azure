@@ -3,7 +3,7 @@ resource "azurerm_service_plan" "asp" {
   location            = var.location
   resource_group_name = var.rgname
   os_type             = var.kind == "Linux" ? "Linux" : "Windows"
-  sku_name            = "${var.sku_tier}_${var.sku_size}"
+  sku_name            = var.sku_size
 
   tags = {
     environment = var.environment

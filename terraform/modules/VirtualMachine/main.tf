@@ -29,9 +29,12 @@ resource "azurerm_linux_virtual_machine" "vm" {
     azurerm_network_interface.vm_nic.id,
   ]
 
-  admin_ssh_key {
-    username   = var.admin_username
-    public_key = var.ssh_public_key
+  dynamic "admin_ssh_key" {
+    for_each = var.ssh_public_key != null ? [1] : []
+    content {
+      username   = var.admin_username
+      public_key = var.ssh_public_key
+    }
   }
 
   os_disk {
