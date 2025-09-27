@@ -18,9 +18,9 @@ resource "azurerm_linux_web_app" "app" {
   service_plan_id     = azurerm_service_plan.asp.id
 
   site_config {
-    always_on       = var.always_on
-    ftps_state      = var.ftps_state
-    http2_enabled   = var.http2_enabled
+    always_on     = var.always_on
+    ftps_state    = var.ftps_state
+    http2_enabled = var.http2_enabled
     application_stack {
       docker_image_name   = var.linux_fx_version
       dotnet_version      = var.dotnet_framework_version
@@ -58,13 +58,13 @@ resource "azurerm_windows_web_app" "app" {
   service_plan_id     = azurerm_service_plan.asp.id
 
   site_config {
-    always_on       = var.always_on
-    ftps_state      = var.ftps_state
-    http2_enabled   = var.http2_enabled
+    always_on     = var.always_on
+    ftps_state    = var.ftps_state
+    http2_enabled = var.http2_enabled
     application_stack {
-      dotnet_version      = var.dotnet_framework_version
-      php_version         = var.php_version
-      java_version        = var.java_version
+      dotnet_version = var.dotnet_framework_version
+      php_version    = var.php_version
+      java_version   = var.java_version
     }
   }
 
