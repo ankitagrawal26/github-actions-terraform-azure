@@ -13,9 +13,9 @@ output "vm_private_ip" {
   value       = azurerm_network_interface.vm_nic.private_ip_address
 }
 
-output "vm_public_ip" {
-  description = "Public IP address of the Virtual Machine"
-  value       = var.public_ip_id != null ? azurerm_network_interface.vm_nic.ip_configuration[0].public_ip_address : null
+output "vm_public_ip_id" {
+  description = "Public IP ID of the Virtual Machine"
+  value       = var.public_ip_id
 }
 
 output "network_interface_id" {
