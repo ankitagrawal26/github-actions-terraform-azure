@@ -26,7 +26,7 @@ output "vm" {
     id         = module.VM.vm_id
     name       = module.VM.vm_name
     private_ip = module.VM.vm_private_ip
-    public_ip  = module.VM.vm_public_ip
+    public_ip  = module.VM.vm_public_ip_id
   }
 }
 
