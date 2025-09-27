@@ -64,20 +64,6 @@ resource "azurerm_mssql_database" "sql_database" {
   }
 }
 
-resource "azurerm_mssql_vulnerability_assessment" "va" {
-  count = var.enable_vulnerability_assessment ? 1 : 0
-
-  server_vulnerability_assessment_id = azurerm_mssql_server_vulnerability_assessment.server_va[0].id
-  database_name                      = keys(var.databases)[0]
-  storage_container_path             = var.va_storage_container_path
-  storage_account_access_key         = var.va_storage_account_access_key
-  storage_container_sas_key          = var.va_storage_container_sas_key
-  recurring_scans {
-    enabled                   = var.va_recurring_scans_enabled
-    email_subscription_admins = var.va_email_subscription_admins
-    emails                    = var.va_emails
-  }
-}
 
 resource "azurerm_mssql_server_security_alert_policy" "security_policy" {
   count = var.enable_vulnerability_assessment ? 1 : 0

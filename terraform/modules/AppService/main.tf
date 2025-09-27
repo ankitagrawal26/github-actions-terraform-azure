@@ -1,14 +1,9 @@
-resource "azurerm_app_service_plan" "asp" {
+resource "azurerm_service_plan" "asp" {
   name                = "${var.app_service_name}-plan"
   location            = var.location
   resource_group_name = var.rgname
-  kind                = var.kind
-  reserved            = var.reserved
-
-  sku {
-    tier = var.sku_tier
-    size = var.sku_size
-  }
+  os_type             = var.kind == "Linux" ? "Linux" : "Windows"
+  sku_name            = "${var.sku_tier}_${var.sku_size}"
 
   tags = {
     environment = var.environment
@@ -19,7 +14,7 @@ resource "azurerm_app_service" "app" {
   name                = var.app_service_name
   location            = var.location
   resource_group_name = var.rgname
-  app_service_plan_id = azurerm_app_service_plan.asp.id
+  app_service_plan_id = azurerm_service_plan.asp.id
 
   site_config {
     linux_fx_version          = var.linux_fx_version

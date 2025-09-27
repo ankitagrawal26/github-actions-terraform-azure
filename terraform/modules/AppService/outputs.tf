@@ -25,12 +25,12 @@ output "app_service_possible_outbound_ip_addresses" {
 
 output "app_service_plan_id" {
   description = "ID of the App Service Plan"
-  value       = azurerm_app_service_plan.asp.id
+  value       = azurerm_service_plan.asp.id
 }
 
 output "app_service_plan_name" {
   description = "Name of the App Service Plan"
-  value       = azurerm_app_service_plan.asp.name
+  value       = azurerm_service_plan.asp.name
 }
 
 output "identity_principal_id" {

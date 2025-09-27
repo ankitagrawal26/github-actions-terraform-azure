@@ -22,7 +22,7 @@ output "workspace_secondary_shared_key" {
 
 output "workspace_portal_url" {
   description = "Portal URL of the Log Analytics workspace"
-  value       = azurerm_log_analytics_workspace.law.portal_url
+  value       = "https://portal.azure.com/#view/Microsoft_OperationsManagementSuite_Workspace/DataSources/DataSourcesBlade/~/overview/workspace~/${azurerm_log_analytics_workspace.law.id}"
 }
 
 output "solutions" {
